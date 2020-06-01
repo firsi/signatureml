@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { animated, useSpring } from "react-spring"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Card from "@material-ui/core/Card"
@@ -58,6 +59,7 @@ const useStyles = makeStyles(theme => ({
 export const ServiceCard = ({title, actionUrl, content, imageUrl, actionText, overlayColor= '#fff', textColor='#000'}) => {
     const props = {imageUrl, overlayColor, textColor};
     const classes = useStyles(props);
+    const router = useRouter();
     const [titleWidth, setTitleWidth] = React.useState(0);
     const [linkWidth, setLinkWidth] = React.useState(0);
     const [actionAreaWidth, setActionAreaWidth] = React.useState(0);
@@ -94,6 +96,8 @@ export const ServiceCard = ({title, actionUrl, content, imageUrl, actionText, ov
         <Card className={classes.root}>
             <CardActionArea 
                 ref={el => el!==null && setActionAreaWidth(el.getBoundingClientRect().width)}
+                onClick={() => router.push('/qui-sommes-nous')}
+                onTouchEnd={() => router.push('/qui-sommes-nous')}
                 onMouseEnter={() => set({
                                         scaleSize: 1, 
                                         heightSize: 50, 

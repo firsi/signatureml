@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import { animated, useSpring } from 'react-spring'
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
@@ -46,6 +47,7 @@ const useStyles = makeStyles(theme =>({
 }))
 export const ImageContainer = () => {
     const classes = useStyles();
+    const router = useRouter();
     const titleProps = useSpring({
         from: {opacity: 0},
         to: {opacity: 1},
@@ -70,6 +72,9 @@ export const ImageContainer = () => {
             duration: 400
         }
     });
+    const handleClick = () => {
+        router.push('/portfolio/produits');
+    }
     return (
         <div className={classes.root}>
         <div className={classes.overlay}></div>
@@ -87,7 +92,7 @@ export const ImageContainer = () => {
                 </Typography>
             </animated.div>
             <animated.div style={buttonProps}>
-                <Button variant='contained' color='primary' size='large'>
+                <Button variant='contained' color='primary' onClick={handleClick} size='large'>
                     Nos Réalisations 
                 </Button>
             </animated.div>

@@ -54,7 +54,10 @@ export const Layout = () => {
     const [animate, setAnimate] = React.useState(false);
 
     React.useEffect(() => {
-       optimizedScrollListener(activateAnimation)
+       optimizedScrollListener(activateAnimation);
+       return () => {
+        window.removeEventListener('scroll', activateAnimation);
+    }
     })
     const activateAnimation = () => {
         if(window.scrollY >=200){

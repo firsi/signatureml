@@ -35,9 +35,15 @@ const useStyles = makeStyles(theme => ({
         width: '80%',
     }
 }))
-export const SearchBar = ({hideOnMobile}) => {
+export const SearchBar = ({hideOnMobile, handleSearchChange}) => {
     const props = {hideOnMobile}
+    const [value, setValue] = React.useState('');
     const classes = useStyles(props);
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+        handleSearchChange(event.target.value)
+    }
     return (
         <div className={classes.search}  >
             <div className={classes.searchIcon}>
@@ -50,6 +56,8 @@ export const SearchBar = ({hideOnMobile}) => {
                 }}
                 placeholder='Rechercher...'
                 inputProps={{'aria-label': 'Rechercher'}}
+                value={value}
+                onChange={handleChange}
             />
         </div>
     )

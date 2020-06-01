@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: 0,
     },
     subtitle: {
-        color: "#505050"
+        color: "#7b7b7b"
     },
     media: {
         height: 45,

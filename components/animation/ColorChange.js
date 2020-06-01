@@ -24,7 +24,7 @@ export const ColorChange = ({duration, primaryColor, secondaryColor, delay, chil
         optimizedScrollListener(activateAnimation);
 
         return () => {
-            window.removeEventListener('scroll');
+            window.removeEventListener('scroll', activateAnimation);
         }
     },[]);
     const activateAnimation = () => {

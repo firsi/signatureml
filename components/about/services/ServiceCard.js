@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
 import { FadeIn } from "../../animation/FadeIn"
 import { FadeInSlideTop } from "../../animation/FadeInSlideTop"
+import { BoxSlide } from "../../animation/BoxSlide"
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -37,25 +38,11 @@ const useStyles = makeStyles(theme => ({
         zIndex: -1,
     },
     body: {
-        color: '#505050'
+        color: '#7b7b7b'
     }
 }))
 export const ServiceCard = ({title, body}) => {
     const classes = useStyles();
-    // const imageSpring = useSpring({
-    //     from: {
-    //             height: 200,
-    //     },
-    //     to: {
-    //         height: 250 
-    //     },
-    //     config: {
-    //         mass: 50,
-    //         tension: 100,
-    //         friction: 150
-    //     },
-
-    // })
     return (
         <FadeInSlideTop delay={300}>
             <Card className={classes.root}>
@@ -63,11 +50,11 @@ export const ServiceCard = ({title, body}) => {
                 <FadeIn delay={700} duration={500}>
                     <Typography className={classes.title} variant='h5'>
                         {title}
-                        <span className={classes.box}></span>
+                        <BoxSlide className={classes.box} delay={800}></BoxSlide>
                     </Typography>
-                        <Typography variant='body2' className={classes.body}>
-                            {body}
-                        </Typography>
+                    <Typography variant='body2' className={classes.body}>
+                        {body}
+                    </Typography>
                 </FadeIn>
             </CardContent>
         </Card>

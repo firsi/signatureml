@@ -28,7 +28,7 @@ export const Services = () => {
                         <ServiceCard 
                             title='Impression Papier'
                             actionText='En-savoir plus'
-                            actionUrl='#'
+                            actionUrl='/qui-sommes-nous'
                             imageUrl='url(/impression-papier.jpg)'
                             content='Nous gérons tous vos travaux d’impression  et de design'
                         />
@@ -37,7 +37,7 @@ export const Services = () => {
                         <ServiceCard 
                             title='Impression divers'
                             actionText='En-savoir plus'
-                            actionUrl='#'
+                            actionUrl='/qui-sommes-nous'
                             imageUrl='url(/impression-touts-supports.jpg)'
                             content='Nous gérons tous vos travaux d’impression  et de design'
                             overlayColor='#000'
@@ -50,7 +50,7 @@ export const Services = () => {
                         <ServiceCard 
                             title='Developpement Web'
                             actionText='En-savoir plus'
-                            actionUrl='#'
+                            actionUrl='/qui-sommes-nous'
                             imageUrl='url(/developpement-web.jpg)'
                             content='Nous gérons tous vos travaux d’impression  et de design'
                             overlayColor='#000'
@@ -61,7 +61,7 @@ export const Services = () => {
                         <ServiceCard 
                             title='Developpement mobile'
                             actionText='En-savoir plus'
-                            actionUrl='#'
+                            actionUrl='/qui-sommes-nous'
                             imageUrl='url(/developpement-mobile.jpg)'
                             content='Nous gérons tous vos travaux d’impression  et de design'
                         />

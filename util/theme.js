@@ -16,7 +16,7 @@ export const theme = createMuiTheme({
     },
     typography: {
         fontFamily: [
-            'Fjalla One',
+            'Ubuntu',
             'Roboto',
             '-apple-system',
             'BlinkMacSystemFont',

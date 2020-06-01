@@ -26,7 +26,7 @@ export const FadeInSlideTop = ({duration, delay, children, ...props}) => {
         optimizedScrollListener(activateAnimation);
 
         return () => {
-            window.removeEventListener('scroll');
+            window.removeEventListener('scroll', activateAnimation);
         }
     },[]);
     const activateAnimation = () => {

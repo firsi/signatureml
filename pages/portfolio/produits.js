@@ -1,13 +1,11 @@
-import { animated, useSpring } from "react-spring"
 import  makeStyles from "@material-ui/core/styles/makeStyles"
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 
-import { WorkCard } from "../../components/home/work/WorkCard"
 import { SearchBar } from "../../components/layout/SearchBar"
 import { FadeIn } from "../../components/animation/FadeIn"
-import { FadeInSlideTop } from "../../components/animation/FadeInSlideTop"
+import { ProductList } from "../../components/portfolio/products/ProductList"
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -29,7 +27,11 @@ const useStyles = makeStyles(theme => ({
 }))
 const Products = () => {
     const classes = useStyles();
-   
+    const [keyword, setKeyword] = React.useState();
+    
+    const handleSearchChange = (keyword) => {
+        setKeyword(keyword)
+    }
     return (
         <div  className={classes.root}>
             <Container maxWidth='lg'>
@@ -41,60 +43,12 @@ const Products = () => {
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <SearchBar />
+                            <SearchBar handleSearchChange={handleSearchChange} />
                         </Grid>
                     </Grid>
                 </FadeIn>
                 <Grid container spacing={5} >
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Chaise'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/chair.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Youth'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/bag.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Dizerstone'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/chair.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Youth'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/bag.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Youth'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/bag.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Dizerstone'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/chair.png'
-                        />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <WorkCard 
-                            title='Youth'
-                            body='toutes couleurs, marquages epoxy à huile(gonflant)'
-                            imageUrl='/bag.png'
-                        />
-                    </Grid>
+                    <ProductList keyword={keyword} />
                 </Grid>
             
                 </Container>
@@ -103,4 +57,3 @@ const Products = () => {
 }
 
 export default Products;
-//TODO: after automation of the workcards, put individual workcards inside FadeIn component
