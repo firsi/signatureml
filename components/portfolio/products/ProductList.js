@@ -7,7 +7,8 @@ export const ProductList = ({keyword}) => {
         if(!keyword){
             return product;
         }
-        else if(product.title.toLowerCase().includes(keyword) || product.body.toLowerCase().includes(keyword)){
+        else if(product.title.toLowerCase().includes(keyword.toLowerCase()) 
+             || product.body.toLowerCase().includes(keyword.toLowerCase())){
             return product;
         }
     }
