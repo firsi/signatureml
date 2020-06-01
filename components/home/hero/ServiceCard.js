@@ -72,11 +72,11 @@ export const ServiceCard = ({title, actionUrl, content, imageUrl, actionText, ov
         height: heightSize.interpolate(value => value),
     };
     const titleSpring = {
-        transform: titleXAbsis.interpolate(value => `translateX(-${value}px)`)
+        transform: titleXAbsis.interpolate(value => `translate3d(-${value}px,0,0)`)
     };
     const actionSpring = {
-        transform: heightSize.interpolate(value => `translateY(${value}px)`),
-        transform: linkXAbsis.interpolate(value => `translateX(-${value}px)`)
+        transform: heightSize.interpolate(value => `translate3d(0,${value}px,0)`),
+        transform: linkXAbsis.interpolate(value => `translate3d(-${value}px,0,0)`)
     }
     const opacitySpring = useSpring({
         from: {opacity: 0},

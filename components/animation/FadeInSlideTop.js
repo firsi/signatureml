@@ -7,11 +7,11 @@ export const FadeInSlideTop = ({duration, delay, children, ...props}) => {
     const springProps = useSpring({
         from: {
                 opacity:0,
-                transform: 'translateY(50px)',
+                transform: 'translate3d(0,50px,0)',
         },
         to: {
             opacity: animate ? 1 : 0 ,
-            transform: animate ? 'translateY(0)' : 'translate(50px)'
+            transform: animate ? 'translate3d(0,0,0)' : 'translate3d(0,50px,0)'
         },
         config: {
             duration: duration ? duration : 300

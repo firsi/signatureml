@@ -31,21 +31,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <style jsx global>{`
-                html,body{
-                  overflow-x: hidden;
-                  background-color: #19191a;
-                  color: #fff;
-                }
-                body{
-                    margin: 0;
-                    height: 100%;
-                }
-                main{
-                  min-height: 90vh;
-                }
-            `}
-            </style>
         </body>
       </Html>
     )

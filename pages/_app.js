@@ -14,6 +14,21 @@ function MyApp({ Component, pageProps }) {
                 <Component {...pageProps} />
             </main>
            <Footer />
+           <style jsx global>{`
+                html,body{
+                  overflow-x: hidden;
+                  background-color: #19191a;
+                  color: #fff;
+                }
+                body{
+                    margin: 0;
+                    height: 100%;
+                }
+                main{
+                  min-height: 90vh;
+                }
+            `}
+            </style>
         </ThemeProvider>
     )
   }
