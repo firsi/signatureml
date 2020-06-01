@@ -97,7 +97,6 @@ export const ServiceCard = ({title, actionUrl, content, imageUrl, actionText, ov
             <CardActionArea 
                 ref={el => el!==null && setActionAreaWidth(el.getBoundingClientRect().width)}
                 onClick={() => router.push('/qui-sommes-nous')}
-                onTouchEnd={() => router.push('/qui-sommes-nous')}
                 onMouseEnter={() => set({
                                         scaleSize: 1, 
                                         heightSize: 50, 
